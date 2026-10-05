@@ -17,7 +17,7 @@ FROM python:3.12-slim AS runtime
 ARG BUILD_ID=""
 WORKDIR /app
 ENV PATH=/venv/bin:$PATH PYTHONUNBUFFERED=1 PORT=8000 BUILD_ID=$BUILD_ID
-RUN useradd -r -u 10001 app
+RUN useradd -r -u 10001 app && chown app:app /app
 COPY --from=build /venv /venv
 COPY --chown=app:app . .
 USER app
