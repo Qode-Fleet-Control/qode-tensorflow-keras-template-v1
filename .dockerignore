@@ -14,3 +14,5 @@ coverage
 artifacts
 checkpoints
 data/MNIST
+.fleet-deploy.log
+.bin
